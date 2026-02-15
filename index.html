@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuroLink | Brain Communication</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        body { background-color: #0f172a; color: white; scroll-behavior: smooth; }
+        .glass { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .accent-glow { box-shadow: 0 0 20px rgba(56, 189, 248, 0.2); }
+    </style>
+</head>
+<body class="font-sans">
+
+    <header class="h-screen flex flex-col items-center justify-center text-center px-4">
+        <h1 class="text-6xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent" data-aos="zoom-in">
+            NeuroInterface
+        </h1>
+        <p class="text-xl text-slate-400 max-w-2xl" data-aos="fade-up" data-aos-delay="200">
+            Exploring the three fundamental dimensions of Brain-Computer interaction.
+        </p>
+        <div class="mt-12 animate-bounce">
+            <a href="#listen" class="text-slate-500">Scroll to Explore ↓</a>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 pb-24 space-y-32">
+
+        <section id="listen" class="grid md:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-right">
+                <h2 class="text-3xl font-bold text-blue-400 mb-4">01. Listen</h2>
+                <p class="text-slate-300 mb-6">Recording the brain's electrochemical symphony. Methods range from surface sensors to deep tissue probes.</p>
+                <ul class="space-y-3">
+                    <li class="glass p-3 rounded-lg accent-glow"><strong>EEG:</strong> Non-invasive surface electrical tracking.</li>
+                    <li class="glass p-3 rounded-lg"><strong>fMRI:</strong> Mapping metabolic activity via blood flow.</li>
+                    <li class="glass p-3 rounded-lg"><strong>Intracortical:</strong> Direct neuron recording via micro-arrays.</li>
+                </ul>
+            </div>
+            <div class="h-64 bg-blue-500/10 rounded-3xl flex items-center justify-center border border-blue-500/30" data-aos="zoom-in">
+                <span class="text-blue-400 font-mono">[Signal Visualization Hook]</span>
+            </div>
+        </section>
+
+        <section id="talk" class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="h-64 bg-emerald-500/10 rounded-3xl flex items-center justify-center border border-emerald-500/30 md:order-1 order-2" data-aos="zoom-in">
+                <span class="text-emerald-400 font-mono">[Stimulation Pulse Hook]</span>
+            </div>
+            <div class="md:order-2 order-1" data-aos="fade-left">
+                <h2 class="text-3xl font-bold text-emerald-400 mb-4">02. Talk</h2>
+                <p class="text-slate-300 mb-6">Sending signals back to modulate neural states or restore lost functions.</p>
+                <ul class="space-y-3">
+                    <li class="glass p-3 rounded-lg accent-glow"><strong>TMS:</strong> Magnetic pulses for non-invasive modulation.</li>
+                    <li class="glass p-3 rounded-lg"><strong>DBS:</strong> Deep-seated electrodes for Parkinson's & Epilepsy.</li>
+                    <li class="glass p-3 rounded-lg"><strong>Optogenetics:</strong> Light-based cellular control (Lab-only).</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="loop" class="text-center space-y-8">
+            <div data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-purple-400 mb-4">03. The Closed Loop</h2>
+                <p class="text-slate-300 max-w-2xl mx-auto">The ultimate frontier: Bidirectional systems that listen, analyze, and stimulate in real-time.</p>
+            </div>
+            <div class="glass p-12 rounded-full w-64 h-64 mx-auto flex items-center justify-center border-dashed border-2 border-purple-500/50 animate-[spin_10s_linear_infinite]" data-aos="rotate-in">
+                <span class="text-purple-300 font-bold">SYNERGY</span>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="py-12 border-t border-slate-800 text-center text-slate-500 text-sm">
+        Built for the future of neurotechnology.
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+    </script>
+</body>
+</html>
