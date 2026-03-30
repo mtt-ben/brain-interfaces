@@ -1,0 +1,67 @@
+<div class="minimal-back" onclick="location.hash='home'">
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 15l-6-6-6 6"/>
+    </svg>
+</div>
+
+<div class="selection-layout">
+    <div class="choice-item listen" onclick="location.hash='listen'">
+        <div class="circle-btn"></div>
+        <p>LISTEN</p>
+    </div>
+    <div class="choice-item talk" onclick="location.hash='talk'">
+        <div class="circle-btn"></div>
+        <p>TALK</p>
+    </div>
+    <div class="choice-item loop" onclick="location.hash='loop'">
+        <div class="circle-btn"></div>
+        <p>LOOP</p>
+    </div>
+</div>
+
+<style>
+    .selection-layout { 
+        position: relative; 
+        width: 100%; 
+        height: 100%; 
+    }
+    .choice-item { 
+        text-align: center; 
+        cursor: pointer; 
+        transition: transform 0.3s; 
+        position: absolute; 
+    }
+    .circle-btn { 
+        width: 80px; 
+        height: 80px; 
+        border: 2px solid #fff; 
+        border-radius: 50%; 
+        margin: 0 auto 15px; 
+    }
+
+    .talk { 
+        top: 50%; 
+        left: 75%; 
+        transform: translate(-50%, -50%); 
+    }
+    .listen { 
+        top: 50%; 
+        left: 25%; 
+        transform: translate(-50%, -50%); 
+    }
+    .loop { 
+        top: 80%; 
+        left: 50%; 
+        transform: translate(-50%, -50%); 
+    }
+
+    .talk:hover { 
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+    .listen:hover { 
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+    .loop:hover { 
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+</style>

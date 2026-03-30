@@ -1,0 +1,49 @@
+<div class="grid-container">
+    <div class="grid-item" onclick="openModal('talk_1')">
+        <div class="zone-point"></div>
+        <span>TMS</span>
+    </div>
+    <div class="grid-item" onclick="openModal('talk_2')">
+        <div class="zone-point"></div>
+        <span>tDCS / tACS</span>
+    </div>
+    <div class="grid-item" onclick="openModal('talk_3')">
+        <div class="zone-point"></div>
+        <span>ICMS</span>
+    </div>
+    <div class="grid-item" onclick="openModal('talk_4')">
+        <div class="zone-point"></div>
+        <span>DBS</span>
+    </div>
+    <div class="grid-item" onclick="openModal('talk_5')">
+        <div class="zone-point"></div>
+        <span>tFUS</span>
+    </div>
+    <div class="grid-item" onclick="openModal('talk_6')">
+        <div class="zone-point"></div>
+        <span>Magnetothermal Stimulation</span>
+    </div>
+    <div class="grid-item" onclick="openModal('talk_7')">
+        <div class="zone-point"></div>
+        <span>Optogenetics</span>
+    </div>
+    <div class="grid-item" onclick="openModal('talk_8')">
+        <div class="zone-point"></div>
+        <span>Chemogenetics (DREADDs)</span>
+    </div>
+    <div class="grid-item" onclick="openModal('talk_9')">
+        <div class="zone-point"></div>
+        <span>Vagus Nerve Stimulation (VNS)</span>
+    </div>
+</div>
+
+<style>
+    .grid-container { 
+        display: grid; 
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 80px; 
+    }
+    .grid-item { cursor: pointer; text-align: center; display: flex; flex-direction: column; align-items: center; }
+    .zone-point { width: 40px; height: 40px; background: rgba(255,255,255,0.2); border: 1px solid #fff; border-radius: 50%; margin-bottom: 10px; transition: background 0.3s; }
+    .grid-item:hover .zone-point { background: #fff; }
+</style>

@@ -1,0 +1,20 @@
+<div class="page-container">
+    <div class="hero-text">
+        <h1 style="font-size: 4rem; letter-spacing: 5px;">ARCHITECT</h1>
+        <p style="font-size: 1.2rem; opacity: 0.7;">Exploring Systemic Interconnections</p>
+    </div>
+    
+    <a href="sources.md" class="source-link">SOURCES.MD</a>
+
+    <div class="scroll-trigger" onclick="location.hash='selection'">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="white">
+            <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
+        </svg>
+    </div>
+</div>
+
+<style>
+    .page-container { text-align: center; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+    .scroll-trigger { position: absolute; bottom: 40px; cursor: pointer; animation: bounce 2s infinite; }
+    @keyframes bounce { 0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 40% {transform: translateY(-10px);} }
+</style>

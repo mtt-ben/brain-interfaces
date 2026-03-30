@@ -1,0 +1,34 @@
+{
+    "zone_1": {
+        "title": "Point Alpha Analysis",
+        "content": "Detailed data regarding the Western Sector infrastructure and its systemic impact on the local environment."
+    },
+    "zone_2": {
+        "title": "Point Beta Findings",
+        "content": "Observed correlations between high-energy nodes and historical geographic data."
+    },
+    "zone_3": {
+        "title": "Point Gamma Protocol",
+        "content": "Emergency contingency plans for the Eastern transition zones."
+    },
+    "listen_1": { "title": "EEG", "content": "Placeholder content for EEG" },
+    "listen_2": { "title": "MEG", "content": "Placeholder content for MEG" },
+    "listen_3": { "title": "ECoG", "content": "Placeholder content for ECoG" },
+    "listen_4": { "title": "fMRI", "content": "Placeholder content for fMRI" },
+    "listen_5": { "title": "fNIRS", "content": "Placeholder content for fNIRS" },
+    "listen_6": { "title": "PET", "content": "Placeholder content for PET" },
+    "listen_7": { "title": "Calcium Imaging", "content": "Placeholder content for Calcium Imaging" },
+    "talk_1": { "title": "TMS", "content": "Placeholder content for TMS" },
+    "talk_2": { "title": "tDCS / tACS", "content": "Placeholder content for tDCS / tACS" },
+    "talk_3": { "title": "ICMS", "content": "Placeholder content for ICMS" },
+    "talk_4": { "title": "DBS", "content": "Placeholder content for DBS" },
+    "talk_5": { "title": "tFUS", "content": "Placeholder content for tFUS" },
+    "talk_6": { "title": "Magnetothermal Stimulation", "content": "Placeholder content for Magnetothermal Stimulation" },
+    "talk_7": { "title": "Optogenetics", "content": "Placeholder content for Optogenetics" },
+    "talk_8": { "title": "Chemogenetics (DREADDs)", "content": "Placeholder content for Chemogenetics (DREADDs)" },
+    "talk_9": { "title": "Vagus Nerve Stimulation (VNS)", "content": "Placeholder content for Vagus Nerve Stimulation (VNS)" },
+    "loop_1": { "title": "Micro-electrodes / Utah Arrays", "content": "Placeholder content for Micro-electrodes / Utah Arrays" },
+    "loop_2": { "title": "Neural Dust", "content": "Placeholder content for Neural Dust" },
+    "loop_3": { "title": "DBS", "content": "Placeholder content for DBS" },
+    "loop_4": { "title": "Stentrodes", "content": "Placeholder content for Stentrodes" }
+}
