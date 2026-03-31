@@ -1,47 +1,42 @@
-<div class="minimal-back" onclick="location.hash='selection'">
+<div class="minimal-back" onclick="history.back()">
     <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
         <path d="M18 15l-6-6-6 6"/>
     </svg>
 </div>
 
-<div class="grid-container">
-    <div class="grid-item" onclick="openModal('listen_1')">
-        <div class="zone-point"></div>
-        <span>EEG</span>
-    </div>
-    <div class="grid-item" onclick="openModal('listen_2')">
-        <div class="zone-point"></div>
-        <span>MEG</span>
-    </div>
-    <div class="grid-item" onclick="openModal('listen_3')">
-        <div class="zone-point"></div>
-        <span>ECoG</span>
-    </div>
-    <div class="grid-item" onclick="openModal('listen_4')">
-        <div class="zone-point"></div>
-        <span>fMRI</span>
-    </div>
-    <div class="grid-item" onclick="openModal('listen_5')">
-        <div class="zone-point"></div>
-        <span>fNIRS</span>
-    </div>
-    <div class="grid-item" onclick="openModal('listen_6')">
-        <div class="zone-point"></div>
-        <span>PET</span>
-    </div>
-    <div class="grid-item" onclick="openModal('listen_7')">
-        <div class="zone-point"></div>
-        <span>Calcium Imaging</span>
-    </div>
-</div>
+<div class="grid-container"></div>
+
+<a href="sources.md" class="source-link">SOURCES.MD</a>
+
+<script>
+    setTimeout(() => {
+        createPoint('listen_1', 20, 30);
+        createPoint('listen_2', 50, 15);
+        createPoint('listen_3', 80, 40);
+    }, 50);
+</script>
 
 <style>
     .grid-container { 
-        display: grid; 
-        grid-template-columns: repeat(4, 1fr); 
-        gap: 80px; 
+        position: relative;
+        width: 100vw;
+        height: 100vh;
     }
-    .grid-item { cursor: pointer; text-align: center; display: flex; flex-direction: column; align-items: center; }
-    .zone-point { width: 40px; height: 40px; background: rgba(255,255,255,0.2); border: 1px solid #fff; border-radius: 50%; margin-bottom: 10px; transition: background 0.3s; }
-    .grid-item:hover .zone-point { background: #fff; }
+    .dynamic-point {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        cursor: pointer;
+        text-align: center;
+        font-size: 6rem;
+        z-index: 10;
+    }
+    .zone-point { 
+        width: 60px; height: 60px; 
+        background: rgba(255,255,255,0.2); 
+        border: 1px solid #fff; 
+        border-radius: 50%; 
+        margin-bottom: 10px; 
+        transition: background 0.3s; 
+    }
+    .dynamic-point:hover .zone-point { background: #fff; }
 </style>
