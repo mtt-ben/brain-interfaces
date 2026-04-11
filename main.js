@@ -2,21 +2,22 @@ const CONFIG = {
     'home': { x: -100, y: 0, path: './pages/home.html' },
     'selection': { x: -100, y: -100, path: './pages/selection.html' },
     'listen-left': { x: 0, y: -200, path: './pages/listen.html' },
-    'talk-right': { x: -200, y: -200, path: './pages/talk.html' }
+    'talk-right': { x: -200, y: -200, path: './pages/talk.html' },
+    'loop-middle': { x: -100, y: -200, path: './pages/loop.html' }
 };
 
 // Définition manuelle des neurones
 const MANUAL_POINTS = [
-    { id: 'p1', x: 175,  y: 125,  cp: { x: 50,  y: -50 } },
-    { id: 'p2', x: 125, y: 125,  cp: { x: -50, y: 50  } },
-    { id: 'p3', x: 150,  y: 175, cp: { x: 0,   y: 100 } }
+    { id: 'p1', x: 175, y: 125, cp: { x: 200, y: 200 } },
+    { id: 'p2', x: 125, y: 125, cp: { x: 0, y: 0  } },
+    { id: 'p3', x: 150, y: 175, cp: { x: 0, y: 0 } }
 ];
 
 // Définition des connexions
 const MANUAL_CONNECTIONS = [
-    { from: 'p1', to: 'p2', speed: 0.008, mode: 'forward' }, // Aller
-    { from: 'p2', to: 'p3', speed: 0.004, mode: 'backward' }, // Retour
-    { from: 'p3', to: 'p1', speed: 0.012, mode: 'ping-pong' } // Aller-Retour
+    { from: 'p1', to: 'p2', speed: 0.01, mode: 'forward', size: 7}, // Aller
+    { from: 'p2', to: 'p3', speed: 0.001, mode: 'backward', size: 10}, // Retour
+    { from: 'p3', to: 'p1', speed: 0.001, mode: 'ping-pong', size: 10} // Aller-Retour
 ];
 
 let zoneData = {};
@@ -77,13 +78,6 @@ function createPoint(id, x, y) {
     item.className = 'grid-item dynamic-point';
     item.style.left = `${x}%`;
     item.style.top = `${y}%`;
-    
-    // --- Effet de flottaison aléatoire ---
-    const duration = 18 + Math.random() * 4;
-    const delay = Math.random() * -20;
-    item.style.animationDuration = `${duration}s`;
-    item.style.animationDelay = `${delay}s`;
-    // -------------------------------------
 
     item.onclick = () => openModal(id);
 
@@ -97,7 +91,6 @@ function createPoint(id, x, y) {
     container.appendChild(item);
 }
 
-// --- MOTEUR NEURO-ÉLECTRIQUE ---
 const canvas = document.getElementById('neuro-canvas');
 const ctx = canvas.getContext('2d');
 let points = [];
@@ -126,7 +119,7 @@ function initNeuro() {
         const endNode = nodesById[conn.to];
         
         if (startNode && endNode) {
-            return new Impulse(startNode, endNode, conn.speed, conn.mode);
+            return new Impulse(startNode, endNode, conn.speed, conn.mode, conn.size);
         }
         return null;
     }).filter(imp => imp !== null);
@@ -136,14 +129,14 @@ function initNeuro() {
 
 // Réutilisation de votre classe Impulse avec sécurité Negative Radius
 class Impulse {
-    constructor(p1, p2, speed, mode) {
+    constructor(p1, p2, speed, mode, size) {
         this.p1 = p1;
         this.p2 = p2;
         this.speed = speed;
         this.mode = mode;
+        this.size = size;
         this.t = Math.random(); 
         this.direction = 1;
-        this.size = 1.5 + Math.random() * 2;
 
         if (this.mode === 'backward') {
             this.direction = -1;
@@ -191,7 +184,7 @@ class Impulse {
         
         ctx.shadowBlur = 0; // Pas de lueur sur la ligne pour ne pas saturer
         ctx.strokeStyle = 'rgba(56, 189, 248, 0.15)'; // Bleu translucide
-        ctx.lineWidth = 1;
+        ctx.lineWidth = 10;
         ctx.stroke();
     }
 
@@ -203,7 +196,7 @@ class Impulse {
         const flicker = Math.random() > 0.4 ? 1.2 : 0.8;
         
         ctx.save();
-        ctx.shadowBlur = 10 * flicker;
+        ctx.shadowBlur = 5 * flicker;
         ctx.shadowColor = '#7dd3fc';
         ctx.fillStyle = '#fef08a';
         ctx.beginPath();

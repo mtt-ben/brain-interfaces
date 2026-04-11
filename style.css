@@ -84,6 +84,4 @@ body, html {
     cursor: pointer;
     text-align: center;
     z-index: 10;
-    /* On applique l'animation par défaut */
-    animation: float 20s ease-in-out infinite;
 }
