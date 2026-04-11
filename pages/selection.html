@@ -4,31 +4,79 @@
     </svg>
 </div>
 
-<div class="selection-layout">
-    <div class="choice-container">
-        <div class="choice-item" onclick="location.hash='listen-left'">
-            <div class="circle-btn"></div>
-            <p>LISTEN</p>
-        </div>
-
-        <div class="choice-item" onclick="location.hash='loop-middle'">
-            <div class="circle-btn"></div>
-            <p>LOOP</p>
-        </div>
-
-        <div class="choice-item" onclick="location.hash='talk-right'">
-            <div class="circle-btn"></div>
-            <p>TALK</p>
-        </div>
+<div class="selection-free-layout">
+    
+    <div class="choice-item text-right" style="top: 40%; left: 20%;" onclick="location.hash='listen-left'">
+        <div class="circle-btn"></div>
+        <p>LISTEN</p>
     </div>
+
+    <div class="choice-item text-top" style="top: 65%; left: 50%;" onclick="location.hash='loop-middle'">
+        <div class="circle-btn"></div>
+        <p>LOOP</p>
+    </div>
+
+    <div class="choice-item text-left" style="top: 40%; left: 80%;" onclick="location.hash='talk-right'">
+        <div class="circle-btn"></div>
+        <p>TALK</p>
+    </div>
+
 </div>
 
 <a href="sources.md" class="source-link">SOURCES.MD</a>
 
 <style>
-    .selection-layout { display: flex; flex-direction: column; align-items: center; width: 100%; }
-    .choice-container { display: flex; gap: 200px; margin-bottom: 100px; }
-    .choice-item { text-align: center; cursor: pointer; transition: transform 0.3s; }
-    .choice-item:hover { transform: scale(1.1); }
-    .circle-btn { width: 80px; height: 80px; border: 2px solid #fff; border-radius: 50%; margin-bottom: 15px; }
+    .selection-free-layout {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .choice-item {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: transform 0.3s;
+        /* Le point d'ancrage est le centre du cercle */
+        transform: translate(-50%, -50%);
+    }
+
+    .choice-item:hover {
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+
+    .circle-btn {
+        width: 80px;
+        height: 80px;
+        border: 2px solid #fff;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.05);
+        flex-shrink: 0;
+    }
+
+    .choice-item p {
+        position: absolute;
+        margin: 0;
+        color: white;
+        font-weight: bold;
+        letter-spacing: 2px;
+        pointer-events: none;
+    }
+
+    /* --- Variantes de position du texte --- */
+
+    /* Texte en BAS (Défaut précédent) */
+    .choice-item.text-bottom { flex-direction: column; }
+    .choice-item.text-bottom p { top: 95px; }
+
+    /* Texte en HAUT */
+    .choice-item.text-top p { bottom: 95px; }
+
+    /* Texte à GAUCHE */
+    .choice-item.text-left p { right: 95px; }
+
+    /* Texte à DROITE */
+    .choice-item.text-right p { left: 95px; }
 </style>

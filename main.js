@@ -8,16 +8,39 @@ const CONFIG = {
 
 // Définition manuelle des neurones
 const MANUAL_POINTS = [
-    { id: 'p1', x: 175, y: 125, cp: { x: 200, y: 200 } },
-    { id: 'p2', x: 125, y: 125, cp: { x: 0, y: 0  } },
-    { id: 'p3', x: 150, y: 175, cp: { x: 0, y: 0 } }
+    { id: 'listen', x: 120, y: 140, cp: { x: -500, y: 500 } },
+    { id: 'loop', x: 150, y: 165, cp: { x: 0, y: 200 } },
+    { id: 'talk', x: 180, y: 140, cp: { x: 0, y: 0 } },
+    // Loop nodes
+    { id: 'lt1', x: 165, y: 285, cp: { x: 0, y: -100 } },
+    { id: 'lt2', x: 135, y: 265, cp: { x: 0, y: -100 } },
+    { id: 'lt3', x: 180, y: 235, cp: { x: 0, y: -100 } },
+    { id: 'lt4', x: 120, y: 220, cp: { x: 0, y: -100 } },
+    // Listen nodes
+    { id: 'l1', x: 10, y: 230, cp: { x: 0, y: -500 } },
+    { id: 'l2', x: 25, y: 220, cp: { x: 300, y: -500 } },
+    { id: 'l3', x: 36, y: 260, cp: { x: 0, y: -500 } },
+    { id: 'l4', x: 48, y: 240, cp: { x: 300, y: -500 } },
+    { id: 'l5', x: 63, y: 275, cp: { x: 0, y: -500 } },
+    { id: 'l6', x: 71, y: 255, cp: { x: 300, y: -500 } },
+    { id: 'l7', x: 85, y: 285, cp: { x: 0, y: -500 } },
 ];
 
 // Définition des connexions
 const MANUAL_CONNECTIONS = [
-    { from: 'p1', to: 'p2', speed: 0.01, mode: 'forward', size: 7}, // Aller
-    { from: 'p2', to: 'p3', speed: 0.001, mode: 'backward', size: 10}, // Retour
-    { from: 'p3', to: 'p1', speed: 0.001, mode: 'ping-pong', size: 10} // Aller-Retour
+    // Loop connections
+    { from: 'loop', to: 'lt1', speed: 0.001, mode: 'forward', size: 10},
+    { from: 'loop', to: 'lt2', speed: 0.001, mode: 'backward', size: 10},
+    { from: 'loop', to: 'lt3', speed: 0.001, mode: 'ping-pong', size: 10},
+    { from: 'loop', to: 'lt4', speed: 0.001, mode: 'ping-pong', size: 10},
+    // Listen connections
+    { from: 'listen', to: 'l1', speed: 0.001, mode: 'forward', size: 10},
+    { from: 'listen', to: 'l2', speed: 0.001, mode: 'forward', size: 10},
+    { from: 'listen', to: 'l3', speed: 0.001, mode: 'forward', size: 10},
+    { from: 'listen', to: 'l4', speed: 0.001, mode: 'forward', size: 10},
+    { from: 'listen', to: 'l5', speed: 0.001, mode: 'forward', size: 10},
+    { from: 'listen', to: 'l6', speed: 0.001, mode: 'forward', size: 10},
+    { from: 'listen', to: 'l7', speed: 0.001, mode: 'forward', size: 10},
 ];
 
 let zoneData = {};
@@ -60,12 +83,94 @@ window.addEventListener('hashchange', handleRoute);
 // 3. Modal Controls
 function openModal(key) {
     const data = zoneData[key];
-    document.getElementById('modal-body').innerHTML = `<h1>${data.title}</h1><p>${data.content}</p>`;
-    document.getElementById('info-window').classList.add('active');
+    if (!data) return;
+
+    const infoWindow = document.getElementById('info-window');
+    const modalBody = document.getElementById('modal-body');
+
+    infoWindow.scrollTop = 0;
+    
+    // Construction d'une interface riche
+    let html = `
+        <div class="modal-header">
+            <div class="badge">${data.category || 'Interface'}</div>
+            <h1>${data.title}</h1>
+            <p class="subtitle">${data.direction || ''}</p>
+
+            <div class="illustration-container">
+                <div class="illus-card">
+                    <img src="${data.img_left?.url || 'https://via.placeholder.com/150'}" alt="Illustration gauche">
+                    <div class="illus-info">
+                        <h5>${data.img_left?.title || 'Concept'}</h5>
+                        <p>${data.img_left?.desc || ''}</p>
+                    </div>
+                </div>
+                <div class="illus-card">
+                    <img src="${data.img_right?.url || 'https://via.placeholder.com/150'}" alt="Illustration droite">
+                    <div class="illus-info">
+                        <h5>${data.img_right?.title || 'Application'}</h5>
+                        <p>${data.img_right?.desc || ''}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="modal-grid">
+            <div class="main-info">
+                <section>
+                    <h3><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg> Mécanisme</h3>
+                    <p>${data.mechanism || data.content}</p>
+                </section>
+                
+                <section>
+                    <h3><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Cas d'usage</h3>
+                    <ul>
+                        ${data.use_cases ? data.use_cases.map(u => `<li>${u}</li>`).join('') : ''}
+                    </ul>
+                </section>
+
+                <div class="warning-box">
+                    <strong>Note technique :</strong> ${data.trade_off || ''}
+                </div>
+            </div>
+
+            <div class="side-specs">
+                <div class="spec-card">
+                    <h4>Performances</h4>
+                    <div class="spec-item"><span>Rés. Spatiale</span> <strong>${data.specs?.resolution_spatial || '-'}</strong></div>
+                    <div class="spec-item"><span>Rés. Temporelle</span> <strong>${data.specs?.resolution_temporal || '-'}</strong></div>
+                    <div class="spec-item"><span>Canaux</span> <strong>${data.specs?.channels || '-'}</strong></div>
+                    <div class="spec-item"><span>Latence</span> <strong>${data.specs?.latency || '-'}</strong></div>
+                </div>
+
+                <div class="spec-card">
+                    <h4>Réglementaire</h4>
+                    <div class="spec-item"><span>Classe</span> <strong>${data.regulatory?.class || '-'}</strong></div>
+                    <div class="spec-item"><span>Phase</span> <strong>${data.regulatory?.phase || '-'}</strong></div>
+                </div>
+
+                <div class="sources">
+                    <h4>Sources</h4>
+                    ${data.sources ? data.sources.map(s => `<span>${s}</span>`).join('') : ''}
+                </div>
+            </div>
+        </div>
+    `;
+
+    modalBody.innerHTML = html;
+    infoWindow.classList.add('active');
+    document.getElementById('modal-overlay').classList.add('active');
 }
 
 function closeModal() {
+    // Retire la fenêtre d'information
     document.getElementById('info-window').classList.remove('active');
+    
+    // Retire l'overlay et l'effet de flou
+    const overlay = document.getElementById('modal-overlay');
+    if (overlay) {
+        overlay.classList.remove('active');
+    }
 }
 
 function createPoint(id, x, y) {
@@ -78,6 +183,10 @@ function createPoint(id, x, y) {
     item.className = 'grid-item dynamic-point';
     item.style.left = `${x}%`;
     item.style.top = `${y}%`;
+
+    item.style.display = 'flex';
+    item.style.flexDirection = 'column';
+    item.style.alignItems = 'center';
 
     item.onclick = () => openModal(id);
 

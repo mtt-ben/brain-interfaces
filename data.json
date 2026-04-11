@@ -1,8 +1,40 @@
 {
   "listen_1": {
-    "title": "EEG",
-    "content": "Placeholder content for EEG"
+    "title": "EEG (Électroencéphalographie)",
+    "category": "Listen",
+    "direction": "Unidirectionnel (Récepteur passif)",
+    "short_desc": "Capte les champs électriques générés par l'activité synaptique pyramidale via le scalp.",
+    "mechanism": "Mesure les fluctuations de tension (V) résultant du flux de courant ionique. Sommation spatiale des potentiels post-synaptiques synchrones traversant le LCR, la dure-mère et l'os.",
+    "use_cases": ["Diagnostic de l'épilepsie", "Monitorage du sommeil", "BCI (Prothèses via P300/SMR)", "Recherche cognitive"],
+    "specs": {
+      "resolution_spatial": "Mauvaise (~1-3 cm)",
+      "resolution_temporal": "Excellente (< 1 ms)",
+      "channels": "1 à 256 électrodes",
+      "bandwidth": "0.1 Hz à 100 Hz (Delta, Theta, Alpha, Beta, Gamma)",
+      "itr": "5 à 50 bits/min",
+      "latency": "5 ms à 40 ms (matériel)",
+      "snr": "Faible (Artefacts EMG/EOG)",
+      "cost": "200$ (Consumer) - 150k$ (Recherche)"
+    },
+    "regulatory": {
+      "class": "Classe II (FDA) / IIa (MDR)",
+      "phase": "Phase IV (Standard de soin depuis 1924)",
+      "biocompatibility": "Inerte (Ag/AgCl, Or), risque d'irritation cutanée"
+    },
+    "trade_off": "Le coût caché est le temps de préparation : l'impédance doit être < 5 kΩ, nécessitant gel et nettoyage, limitant le Plug-and-Play.",
+    "sources": ["Buzsáki et al., 2012", "Niedermeyer's 7th Ed", "Wolpaw et al., 2002"],
+    "img_left": {
+      "url": "signal.png",
+      "title": "Placement 10-20",
+      "desc": "Configuration standard des électrodes sur le scalp."
+    },
+    "img_right": {
+      "url": "signal.png",
+      "title": "Signal Brut",
+      "desc": "Sommation des potentiels post-synaptiques."
+    }
   },
+
   "listen_2": {
     "title": "MEG",
     "content": "Placeholder content for MEG"
@@ -64,7 +96,7 @@
     "content": "Placeholder content for Vagus Nerve Stimulation (VNS)"
   },
   "loop_1": {
-    "title": "Micro-electrodes / Utah Arrays",
+    "title": "Micro-electrodes",
     "content": "Placeholder content for Micro-electrodes / Utah Arrays"
   },
   "loop_2": {
