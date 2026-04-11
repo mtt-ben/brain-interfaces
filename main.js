@@ -32,8 +32,7 @@ const MANUAL_POINTS = [
     { id: 't5', x: 248, y: 273, cp: { x: 0, y: -800 } },
     { id: 't6', x: 260, y: 238, cp: { x: -300, y: -500 } },
     { id: 't7', x: 266, y: 262, cp: { x: 0, y: -1000 } },
-    { id: 't8', x: 280, y: 220, cp: { x: -300, y: -500 } },
-    { id: 't9', x: 285, y: 240, cp: { x: 0, y: -800 } },   
+    { id: 't8', x: 280, y: 220, cp: { x: -300, y: -500 } },  
 ];
 
 // Définition des connexions
@@ -60,7 +59,6 @@ const MANUAL_CONNECTIONS = [
     { from: 'talk', to: 't6', speed: 0.001, mode: 'forward', size: 10 },
     { from: 'talk', to: 't7', speed: 0.001, mode: 'forward', size: 10 },
     { from: 'talk', to: 't8', speed: 0.001, mode: 'forward', size: 10 },
-    { from: 'talk', to: 't9', speed: 0.001, mode: 'forward', size: 10 },
 ];
 
 let zoneData = {};
@@ -114,19 +112,19 @@ function openModal(key) {
     let html = `
         <div class="modal-header">
             <div class="badge">${data.category || 'Interface'}</div>
-            <h1>${data.title}</h1>
+            <h1>${data.title_in}</h1>
             <p class="subtitle">${data.direction || ''}</p>
 
             <div class="illustration-container">
                 <div class="illus-card">
-                    <img src="${data.img_left?.url || 'https://via.placeholder.com/150'}" alt="Illustration gauche">
+                    <img src="${data.img_left?.url || 'https://placehold.co/404'}" alt="Illustration gauche">
                     <div class="illus-info">
                         <h5>${data.img_left?.title || 'Concept'}</h5>
                         <p>${data.img_left?.desc || ''}</p>
                     </div>
                 </div>
                 <div class="illus-card">
-                    <img src="${data.img_right?.url || 'https://via.placeholder.com/150'}" alt="Illustration droite">
+                    <img src="${data.img_right?.url || 'https://placehold.co/404'}" alt="Illustration droite">
                     <div class="illus-info">
                         <h5>${data.img_right?.title || 'Application'}</h5>
                         <p>${data.img_right?.desc || ''}</p>
@@ -138,40 +136,35 @@ function openModal(key) {
         <div class="modal-grid">
             <div class="main-info">
                 <section>
-                    <h3><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg> Mécanisme</h3>
+                    <h3><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg> How it works</h3>
                     <p>${data.mechanism || data.content}</p>
                 </section>
                 
                 <section>
-                    <h3><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Cas d'usage</h3>
+                    <h3><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Use Cases</h3>
                     <ul>
                         ${data.use_cases ? data.use_cases.map(u => `<li>${u}</li>`).join('') : ''}
                     </ul>
                 </section>
 
                 <div class="warning-box">
-                    <strong>Note technique :</strong> ${data.trade_off || ''}
+                    <strong>Tradeoff :</strong> ${data.trade_off || ''}
                 </div>
             </div>
 
             <div class="side-specs">
                 <div class="spec-card">
                     <h4>Performances</h4>
-                    <div class="spec-item"><span>Rés. Spatiale</span> <strong>${data.specs?.resolution_spatial || '-'}</strong></div>
-                    <div class="spec-item"><span>Rés. Temporelle</span> <strong>${data.specs?.resolution_temporal || '-'}</strong></div>
-                    <div class="spec-item"><span>Canaux</span> <strong>${data.specs?.channels || '-'}</strong></div>
-                    <div class="spec-item"><span>Latence</span> <strong>${data.specs?.latency || '-'}</strong></div>
+                    <div class="spec-item"><span>Spatial Res.</span> <strong>${data.specs?.resolution_spatial || '-'}</strong></div>
+                    <div class="spec-item"><span>Temporal Res.</span> <strong>${data.specs?.resolution_temporal || '-'}</strong></div>
+                    <div class="spec-item"><span>Channels</span> <strong>${data.specs?.channels || '-'}</strong></div>
+                    <div class="spec-item"><span>Latency</span> <strong>${data.specs?.latency || '-'}</strong></div>
                 </div>
 
                 <div class="spec-card">
-                    <h4>Réglementaire</h4>
-                    <div class="spec-item"><span>Classe</span> <strong>${data.regulatory?.class || '-'}</strong></div>
+                    <h4>Reglementation</h4>
+                    <div class="spec-item"><span>Class</span> <strong>${data.regulatory?.class || '-'}</strong></div>
                     <div class="spec-item"><span>Phase</span> <strong>${data.regulatory?.phase || '-'}</strong></div>
-                </div>
-
-                <div class="sources">
-                    <h4>Sources</h4>
-                    ${data.sources ? data.sources.map(s => `<span>${s}</span>`).join('') : ''}
                 </div>
             </div>
         </div>

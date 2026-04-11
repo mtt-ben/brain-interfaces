@@ -1,25 +1,31 @@
 # SOURCES - BRAIN INTERFACES
 
-## 1. TECHNOLOGIES DE RÉCEPTION (LISTEN)
+## 1. LISTEN
 
-### EEG (Électroencéphalographie)
-- Buzsáki et al. (2012). The origin of extracellular fields and currents — EEG, ECoG, LFP and spikes. Nature Reviews Neuroscience.
-- Niedermeyer & da Silva (2004). Electroencephalography: Basic Principles and Clinical Applications.
-- Wolpaw et al. (2002). Brain–computer interfaces for communication and control. Clinical Neurophysiology.
+### EEG
+### MEG
+### ECoG
+### fMRI
+### fNIRS
+### PET
+### Calcium Imaging
 
-## 2. TECHNOLOGIES D'ÉMISSION (TALK)
+## 2. TALK
 
-### TMS / Stimulation
-- Hallett, M. (2007). Transcranial magnetic stimulation: A primer. Neuron.
-- Rossi et al. (2009). Safety and application guidelines for TMS. Clinical Neurophysiology.
+### TMS
+### tDCS / tACS
+### IMCS
+### VNS
+### tFUS
+### Magnetothermal Stimulation
+### Optogenetics
+### DREADDs
 
-## 3. TECHNOLOGIES INVASIVES (LOOP)
+## 3. LOOP
 
-### Micro-électrodes
-- Maynard et al. (1997). Utah Array: multi-electrode array for intracortical microstimulation. Journal of Neuroscience Methods.
-- Polikov et al. (2005). Response of brain tissue to chronically implanted neural electrodes.
+### Micro-electrodes
+### Neural Dust
+### DBS
+### Stentrodes
 
-## 4. RÉFÉRENCES TECHNIQUES
-- Résolution spatiale vs temporelle : Burle et al. (2015). Int. Journal of Psychophysiology.
-- Classification médicale : FDA Product Classification Database (Classe II/III).
-- Analyse de marché : Grand View Research - BCI Market Report.
+## 4. Technical references
