@@ -124,7 +124,7 @@
     "title_in": "Functional Magnetic Resonance Imaging",
     "category": "Listen",
     "direction": "Indirect – detection of blood oxygenation variations linked to neural activity",
-    "short_desc": "fMRI relies on the BOLD effect (Blood Oxygen Level Dependent). When neurons activate, they consume oxygen, triggering a local increase in oxygenated blood flow. Oxygenated (diamagnetic) and deoxygenated (paramagnetic) hemoglobin differentially alter the local magnetic field, detected by the magnet as a T2* signal change.",
+    "short_desc": "fMRI relies on the BOLD effect (Blood Oxygen Level Dependent). When neurons activate, they consume oxygen, triggering a local increase in oxygenated blood flow. Oxygenated and deoxygenated hemoglobin differentially alter the local magnetic field, detected by the magnet as a T2* signal change.",
     "mechanism": "RF excitation cycle and relaxation of hydrogen protons in a powerful static magnetic field (B₀). Detects the hemodynamic response (BOLD). Subject is positioned in a tubular scanner with a head coil surrounding the skull.",
     "use_cases": [
       "Clinical: pre-operative functional mapping (Broca/Wernicke areas), post-stroke evaluation",
@@ -132,25 +132,25 @@
       "Neurofeedback: real-time self-regulation of brain activity for pain or depression treatment"
     ],
     "specs": {
-      "resolution_spatial": "~1–3 mm (excellent – can visualize deep structures such as the thalamus)",
-      "resolution_temporal": "~1–5 seconds (poor – limited by hemodynamic latency)",
-      "channels": "~50,000 to 1,000,000+ voxels (each voxel acts as an independent 3D information channel)",
-      "bandwidth": "~0.1–0.2 Hz (physiological BOLD response frequencies)",
-      "itr": "< 2 bits/min (extremely low – vascular response too slow for rapid interaction)",
-      "latency": "4 to 6 seconds (intrinsic delay between neural activity and peak blood flow – hemodynamic impulse response)",
-      "snr": "Moderate – BOLD signal represents only 1–5% variation above background; often requires many task repetitions",
+      "resolution_spatial": "~4-5 mm",
+      "resolution_temporal": "~1 second",
+      "channels": "~50,000 to 1,000,000+ voxels",
+      "bandwidth": "",
+      "itr": "",
+      "latency": "4 to 6 seconds",
+      "snr": "",
       "cost": "Equipment: $1,500,000–$4,500,000 (3T or 7T); Per exam: $500–$1,500"
     },
     "regulatory": {
-      "class": "Class II (FDA, product code LNH) – diagnostic imaging device",
-      "phase": "Phase IV – standard reference technology in hospitals and research since the 1990s",
+      "class": "Class II (FDA) - diagnostic imaging device",
+      "phase": "Phase IV - standard reference technology",
       "biocompatibility": "Inert. No direct physical contact or ionizing radiation. Primary hazard: ferromagnetic projectile attraction by the magnet."
     },
-    "trade_off": "fMRI offers the best whole-brain overview with millimetric spatial precision without surgery. However, it is 'temporally blind': it does not see thought itself, but the metabolic waste it leaves behind with several seconds of delay.",
+    "trade_off": "Hemodynamic lag: because it measures blood-oxygenation changes (BOLD) rather than direct electrical activity, there is a 4–6 second delay between neural firing and signal detection, making it unsuitable for real-time BCI control.",
     "img_left": {
-      "url": "",
-      "title": "",
-      "desc": ""
+      "url": "https://www.researchgate.net/profile/Dustin-Grooms/publication/311848418/figure/fig5/AS:963436221571102@1606712503709/Set-up-and-sample-data-from-functional-magnetic-resonance-imaging-fMRI-testing-a-Brain.gif",
+      "title": "Set-up and sample data from functional magnetic resonance imaging (fMRI) testing",
+      "desc": "Central Nervous System Adaptation After Ligamentous Injury: a Summary of Theories, Evidence, and Clinical Interpretation, Needle A and Al., 2017"
     },
     "img_right": {
       "url": "",
@@ -164,7 +164,7 @@
     "title_in": "Functional Near-Infrared Spectroscopy",
     "category": "Listen",
     "direction": "Indirect – measures hemoglobin concentration changes via optical properties of tissue",
-    "short_desc": "fNIRS injects photons in the near-infrared spectrum (700–900 nm) through the scalp. Biological tissues are relatively transparent in this 'optical window', but oxygenated (HbO₂) and deoxygenated (Hb) hemoglobin absorb light at specific wavelengths. By measuring reflected light (banana-shaped trajectory), local metabolic activity is inferred.",
+    "short_desc": "fNIRS injects photons in the near-infrared spectrum (700–900 nm) through the scalp. Biological tissues are relatively transparent in this 'optical window', but oxygenated (HbO₂) and deoxygenated (Hb) hemoglobin absorb light at specific wavelengths. By measuring reflected light, local metabolic activity is inferred.",
     "mechanism": "Photon diffusion following the modified Beer-Lambert law and detection of backscattering. Non-invasive optode cap (emitters and detectors) placed on the scalp.",
     "use_cases": [
       "Pediatrics: study of cerebral development in infants (more movement-tolerant than MRI)",
@@ -172,30 +172,30 @@
       "Rehabilitation: post-stroke recovery monitoring during physical exercise"
     ],
     "specs": {
-      "resolution_spatial": "~1–2 cm (poor – limited by photon diffusion and inter-optode distance)",
-      "resolution_temporal": "~10–100 ms for acquisition; effectively limited by hemodynamic response (seconds)",
-      "channels": "8 to 128+ channels (depends on number of source-detector pairs)",
-      "bandwidth": "0.01 Hz to 2 Hz (metabolic frequencies)",
+      "resolution_spatial": "Low",
+      "resolution_temporal": "High",
+      "channels": "4 to 128+ channels",
+      "bandwidth": "",
       "itr": "< 5 bits/min (too slow for rapid BCI commands due to vascular inertia)",
-      "latency": "2 to 8 seconds (blood transit time and BOLD response)",
+      "latency": "4 to 6 seconds",
       "snr": "Low to moderate – sensitive to hair color, skull thickness and systemic blood flow (scalp)",
       "cost": "Entry-level: $5,000–$15,000; High-end (high-density): $30,000–$100,000"
     },
     "regulatory": {
       "class": "Class II (FDA/MDR)",
-      "phase": "Phase IV – used routinely for neonatal cerebral oxygenation monitoring and in clinical research",
+      "phase": "Phase IV",
       "biocompatibility": "Inert. Skin contact via plastic, silicone and optical fibers. No known risks (non-ionizing light)."
     },
-    "trade_off": "fNIRS is often marketed as 'the poor or nomadic person's fMRI'. The hidden cost is penetration depth: light does not exceed 2–3 cm in depth, making it blind to subcortical structures (amygdala, hippocampus), limiting its use to cortical surface study.",
+    "trade_off": "Penetration depth: light does not exceed 2–3 cm in depth, making it blind to subcortical structures (amygdala, hippocampus), limiting its use to cortical surface study.",
     "img_left": {
-      "url": "",
-      "title": "",
-      "desc": ""
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/01/Blonde_fNIRS_lady.jpg",
+      "title": "fNIRS with a Gowerlabs NTS system",
+      "desc": "Wikipedia"
     },
     "img_right": {
-      "url": "",
-      "title": "",
-      "desc": ""
+      "url": "https://www.researchgate.net/profile/Kevin-Verdiere/publication/343827328/figure/fig21/AS:927987444768780@1598260856809/fNIRS-principle-with-the-light-emitter-and-detector-going-through-the-different.jpg",
+      "title": "fNIRS principle with the light emitter and detector",
+      "desc": "fNIRS principle with the light emitter and detector, Verdiere K, 2019"
     }
   },
 
@@ -207,35 +207,35 @@
     "short_desc": "PET relies on the injection of a radiopharmaceutical (e.g., ¹⁸F-FDG, a glucose analog). The unstable isotope emits a positron that collides with a local electron, causing annihilation. This reaction emits two 511 keV gamma photons in opposite directions (180°). A ring of detectors captures these coincidences to reconstruct a 3D map of metabolic activity or synaptic receptor density.",
     "mechanism": "Positron-electron annihilation mechanism and temporal coincidence detection. 3D metabolic activity map reconstruction. Patient lies in a circular tunnel of scintillation detectors.",
     "use_cases": [
-      "Oncology: detection of tumors and metastases (hypermetabolism)",
+      "Oncology: detection of tumors and metastases",
       "Neurology: differential diagnosis of dementias (Alzheimer vs. Pick's disease) and localization of interictal epileptic foci",
       "Neuropharmacology: measurement of receptor occupancy by new drugs"
     ],
     "specs": {
       "resolution_spatial": "~4–6 mm (medium – limited by the positron path in tissue before annihilation)",
-      "resolution_temporal": "Minutes (very poor – requires tracer accumulation; unsuitable for real-time thought tracking)",
-      "channels": "Millions of voxels (resolution depends on scintillator crystal density of the device)",
-      "bandwidth": "N/A – static accumulation or slow kinetics measured over several minutes",
-      "itr": "~0 bits/min – unusable for motor or communication BCI control",
-      "latency": "10 to 40 minutes (time for radiotracer to be captured by target tissues – incubation period)",
-      "snr": "Low – signal limited by acceptable radiation dose; subject to Poisson noise (random decay)",
+      "resolution_temporal": "Minutes",
+      "channels": "Millions of voxels",
+      "bandwidth": "",
+      "itr": "",
+      "latency": "",
+      "snr": "Low – signal limited by acceptable radiation dose",
       "cost": "Equipment: $2,000,000–$5,000,000 (often combined with CT or MRI scanner); Per exam: $1,500–$4,000 (high cost due to short isotope half-life requiring a cyclotron)"
     },
     "regulatory": {
-      "class": "Class II (FDA, product code KPS)",
-      "phase": "Phase IV – global clinical standard for molecular imaging since the 1980s",
+      "class": "Class II (FDA)",
+      "phase": "Phase IV",
       "biocompatibility": "Radiological risk. Exposure to ionizing radiation (typical dose: 5–10 mSv per exam, equivalent to several years of natural background radiation)."
     },
-    "trade_off": "PET is the only tool capable of seeing the specific chemistry of the brain (e.g., amyloid plaques, dopamine transporters). The hidden cost is its systemic invasiveness: injecting radioactivity prevents any repeated or daily use, unlike MRI or EEG.",
+    "trade_off": "Systemic invasiveness: injecting radioactivity prevents any repeated or daily use, unlike MRI or EEG.",
     "img_left": {
-      "url": "",
-      "title": "",
-      "desc": ""
+      "url": "https://www.researchgate.net/profile/Vincent-Vandenbussche/publication/281660698/figure/fig5/AS:496724495482881@1495439757019/Schema-illustratif-des-trois-etapes-majeures-de-limagerie-PET.png",
+      "title": "The three major steps of PET imaging",
+      "desc": "Study and development of a PET device dedicated to cancer individualized monitoring, Vandenbussche V, 2014"
     },
     "img_right": {
-      "url": "",
-      "title": "",
-      "desc": ""
+      "url": "https://www.researchgate.net/publication/328624966/figure/fig1/AS:963404076417025@1606704839326/PET-imaging-biomarkers-Examples-of-normal-top-and-abnormal-bottom-positron-emission.png",
+      "title": "PET imaging biomarkers. Examples of normal (top) and abnormal (bottom) positron emission tomography (PET) imaging markers in three different subjects",
+      "desc": "Secondary prevention of Alzheimer’s dementia: neuroimaging contributions, Mara ten Kate and Al., 2018"
     }
   },
 
@@ -243,7 +243,7 @@
     "title": "Calcium Imaging",
     "title_in": "Calcium Imaging",
     "category": "Listen",
-    "direction": "Indirect / Proxy – records Ca²⁺ ion fluxes as an indicator of neural activity",
+    "direction": "Indirect – records Ca²⁺ ion fluxes as an indicator of neural activity",
     "short_desc": "Calcium imaging uses fluorescent indicators (proteins such as GCaMP or chemical dyes) that emit light when binding to calcium. Since an action potential triggers massive Ca²⁺ entry into the neuron, the cell 'lights up' with each discharge. Two-photon or miniscope microscopes film these flashes in real time, allowing visualization of the activity of thousands of individually identified neurons.",
     "mechanism": "Fluorescent indicator (fluorophore) + Ca²⁺ binding → conformational change → increased fluorescence excited by laser. Requires a cranial optical window (craniotomy replaced by glass) or GRIN lens inserted into the parenchyma for deep imaging.",
     "use_cases": [
@@ -252,30 +252,30 @@
       "Brain mapping: visualization of functional topography at the cellular scale"
     ],
     "specs": {
-      "resolution_spatial": "< 1 µm (ultra-high – subcellular resolution: dendrites, synaptic spines)",
-      "resolution_temporal": "50–100 ms (medium – limited by calcium binding kinetics and image capture speed)",
+      "resolution_spatial": "< 1 µm",
+      "resolution_temporal": "50–100 ms",
       "channels": "1,000 to 10,000+ neurons simultaneously in a single field of view",
       "bandwidth": "Extremely high (Gbps) – high-resolution video stream at 30–100 fps generates terabytes of raw data per hour",
-      "itr": "Potentially very high (> 500 bits/min theoretically) as precise identity of each network neuron is accessible",
+      "itr": "Potentially very high",
       "latency": "~50 to 150 ms – delay due to slow calcium signal rise after electrical spike and camera integration time",
-      "snr": "High in superficial layers – very contrasted signal vs. dark background; attenuates with depth due to photon scattering",
+      "snr": "High in superficial layers; attenuates with depth due to photon scattering",
       "cost": "Two-photon microscope: $250,000–$600,000; Miniscope (portable): $5,000–$20,000; Indicators (viral vectors): $500–$2,000 per injection"
     },
     "regulatory": {
-      "class": "N/A – research use only; not approved for humans as it requires genetic modification (viral vector) or chemical injection",
-      "phase": "Pre-clinical – essentially limited to animal models (mice, non-human primates)",
+      "class": "N/A – research use only",
+      "phase": "limited to animal models",
       "biocompatibility": "Problematic. Risk of phototoxicity (laser tissue burning), calcium saturation (disruption of cellular homeostasis) and immune reaction to the viral vector."
     },
-    "trade_off": "Calcium imaging offers ground truth on cell identity (knowing exactly which type of neuron activates). However, its hidden cost is its biological asymmetry: a slow and persistent chemical response is observed, preventing capture of the precise millisecond timing of electrical discharges that only electrophysiology can capture.",
+    "trade_off": "Biological asymmetry: a slow and persistent chemical response is observed, preventing capture of the precise millisecond timing of electrical discharges that only electrophysiology can capture.",
     "img_left": {
-      "url": "",
-      "title": "",
-      "desc": ""
+      "url": "https://www.researchgate.net/publication/339656123/figure/fig4/AS:11431281386855848@1745092129337/Calcium-imaging-of-primary-mouse-neurons-expressing-NCaMP7-a-Representative-confocal.tif",
+      "title": "Calcium imaging of primary mouse neurons expressing NCaMP7",
+      "desc": "Novel Genetically Encoded Bright Positive Calcium Indicator NCaMP7 Based on the mNeonGreen Fluorescent Protein, Oksana M Subach and Al., 2020"
     },
     "img_right": {
-      "url": "",
-      "title": "",
-      "desc": ""
+      "url": "https://www.researchgate.net/publication/337288243/figure/fig2/AS:960345829044235@1605975696283/In-vivo-optical-imaging-Optical-technologies-developed-for-in-vivo-imaging-in-freely.png",
+      "title": "In vivo microendoscopy Vs. Fiber Photometry",
+      "desc": "Advances in adaptive optics–based two-photon fluorescence microscopy for brain imaging, Sahu P and Mazumder N, 2020"
     }
   },
 
@@ -405,7 +405,7 @@
     "title_in": "Transcranial Focused Ultrasound",
     "category": "Talk",
     "direction": "Unidirectional – non-invasive neuromodulation using acoustic mechanical energy",
-    "short_desc": "tFUS uses low-intensity ultrasound waves focused through the skull toward millimetric brain targets. Unlike TMS, it can reach deep structures (thalamus, hippocampus) without surgery. The mechanism relies on mechanotransduction: acoustic pressure modifies neural membrane capacitance and activates mechanosensitive ion channels, modulating excitability.",
+    "short_desc": "tFUS uses low-intensity ultrasound waves focused through the skull toward millimetric brain targets. Unlike TMS, it can reach deep structures (thalamus, hippocampus) without surgery. The mechanism, while not fully understood, may rely on mechanotransduction: acoustic pressure modifies neural membrane capacitance and activates mechanosensitive ion channels, modulating excitability.",
     "mechanism": "Focusing of ultrasound waves creating a high acoustic pressure zone (focus) at the beam convergence point. Transducers placed on the scalp, often integrated in a water-cooled helmet for wave coupling and skin protection.",
     "use_cases": [
       "Thermal ablation (high intensity): treatment of essential tremors and Parkinson's disease",
@@ -413,13 +413,13 @@
       "Blood-brain barrier (BBB) opening: targeted drug / chemotherapy delivery"
     ],
     "specs": {
-      "resolution_spatial": "~2–5 mm (excellent – best non-invasive resolution for deep targets)",
-      "resolution_temporal": "High (ms) – pulses can be synchronized with brain rhythms",
-      "channels": "1 (fixed transducer) to 1024 elements (multi-element arrays with electronic focus correction through skull)",
-      "bandwidth": "Carrier frequencies: 200 kHz to 1 MHz; pulse repetition frequency (PRF): up to 1 kHz",
-      "itr": "N/A – used for modulation of pathological or functional states",
-      "latency": "~ms (physical wave propagation delay) followed by near-instantaneous neural response",
-      "snr": "N/A (Talk) – pressure ratio between focus and lateral lobes (undesired heating zones) is measured",
+      "resolution_spatial": "~2–5 mm (size of a grain of rice)",
+      "resolution_temporal": "High (ms)",
+      "channels": "1 to 1024 elements",
+      "bandwidth": "Carrier frequencies: 200 kHz to 1 MHz; pulse repetition frequency: up to 1 kHz",
+      "itr": "",
+      "latency": "~ms (physical wave propagation delay)",
+      "snr": "",
       "cost": "Complete system (MRgFUS): $1,500,000–$2,500,000; Per procedure: $10,000–$25,000"
     },
     "regulatory": {
@@ -427,16 +427,16 @@
       "phase": "Phase IV for essential tremor; Phase II/III for BBB opening and depression in 2026",
       "biocompatibility": "Excellent (non-invasive). Risks: skull bone heating, intracranial cavitation (gas bubbles) and micro-hemorrhages if intensity is too high."
     },
-    "trade_off": "tFUS is the only technology capable of stimulating deep brain structures (e.g., amygdala) with electrode-like precision without drilling the skull. The hidden cost is physical complexity: skull geometry and thickness vary so much between individuals that they deflect the beam (aberration), requiring ultra-complex and costly phase correction algorithms to avoid burning healthy areas.",
+    "trade_off": "Physical complexity: skull geometry and thickness vary so much between individuals that they deflect the beam (aberration), requiring complex and costly phase correction algorithms to avoid burning healthy areas.",
     "img_left": {
-      "url": "",
-      "title": "",
-      "desc": ""
+      "url": "https://www.researchgate.net/profile/Vibhor-Krishna/publication/321737002/figure/fig2/AS:11431281780722100@1765386746166/Technological-Consideration-for-Transcranial-Focused-Ultrasound-FUS-Ablation.png",
+      "title": "Technological Consideration for Transcranial Focused Ultrasound Ablation",
+      "desc": "A Review of the Current Therapies, Challenges, and Future Directions of Transcranial Focused Ultrasound Technology: Advances in Diagnosis and Treatment, Vibhor Krishna and Al., 2018"
     },
     "img_right": {
-      "url": "",
-      "title": "",
-      "desc": ""
+      "url": "https://soterixmedical.com/static/images/tFUS/tfus-system-component.png",
+      "title": "Transcranial Focused Ultrasound Stimulation",
+      "desc": "soterixmedical.com"
     }
   },
 
@@ -445,29 +445,27 @@
     "title_in": "Magnetothermal Stimulation",
     "category": "Talk",
     "direction": "Unidirectional – remote control of neural activity via magneto-caloric energy conversion",
-    "short_desc": "This technique uses magnetic nanoparticles (MNPs) injected into brain tissue and targeted to specific neurons (often via genetic expression of thermosensitive ion channels such as TRPV1). When an external alternating magnetic field (AMF) is applied, nanoparticles heat up via hysteresis losses. This local temperature rise (~2–5°C) opens TRPV1 channels, causing calcium entry and action potential triggering.",
+    "short_desc": "This technique uses magnetic nanoparticles (MNPs) injected into brain tissue and targeted to specific neurons (often via genetic expression of thermosensitive ion channels such as TRPV1). When an external alternating magnetic field (AMF) is applied, nanoparticles heat up via hysteresis losses. This local temperature rise opens TRPV1 channels, causing calcium entry and action potential triggering.",
     "mechanism": "Alternating magnetic field → agitation of MNP magnetic moments → heat → TRPV1 channel activation → ionic influx. Nanoparticles injected in situ into brain parenchyma; AMF coils surround the head or animal cage.",
     "use_cases": [
-      "Wireless DBS: stimulation of deep structures (e.g., striatum) without permanent electrodes or cables",
-      "Behavioral study: modulation of specific circuits in freely moving animals within a magnetic field",
-      "Targeted therapy: potential treatment of motor or psychiatric diseases with reduced long-term invasiveness"
+      "Research"
     ],
     "specs": {
-      "resolution_spatial": "Excellent (cellular) – limited only by genetic expression of the channel and nanoparticle diffusion",
-      "resolution_temporal": "Low (seconds) – limited by thermal inertia (heating and heat dissipation time)",
-      "channels": "Potential multiplexing: using nanoparticles with different resonance frequencies could theoretically stimulate several neuronal populations independently",
-      "bandwidth": "AMF frequency: 100–500 kHz; biological response limited by thermal cycle",
-      "itr": "N/A – used to modulate reward or motor circuits, not for binary data transfer",
-      "latency": "2 to 10 seconds (time for MNPs to reach TRPV1 channel thermal activation threshold)",
-      "snr": "N/A (Talk) – activation efficiency (percentage of neurons responding to field) is measured",
-      "cost": "Nanoparticles: $500–$2,000 per research batch; AMF generator: $20,000–$50,000"
+      "resolution_spatial": "Excellent (cellular)",
+      "resolution_temporal": "Low (seconds) – limited by thermal inertia",
+      "channels": "",
+      "bandwidth": "",
+      "itr": "",
+      "latency": "",
+      "snr": "",
+      "cost": ""
     },
     "regulatory": {
-      "class": "N/A (Research) – currently unclassified for humans; would likely be Class III (injectable implant + genetic modification)",
-      "phase": "Pre-clinical (rodent models) – no human trials as of 2026 due to requirement for gene therapy to express TRPV1 channels",
-      "biocompatibility": "Moderate to risky. Iron oxide nanoparticles (Fe₃O₄) are biodegradable, but chronic accumulation and repeated heating can induce neuroinflammation or cell death by hyperthermia."
+      "class": "N/A (Research)",
+      "phase": "Rodent models & Cell cultures",
+      "biocompatibility": ""
     },
-    "trade_off": "Magnetothermal stimulation solves the brain 'wiring' problem: once injected, the subject is free of all physical connections. However, the hidden cost is thermal kinetics: unlike optogenetics or electricity, stimulation cannot be stopped instantaneously. Heat takes time to dissipate, potentially causing prolonged unwanted activations or tissue damage if the duty cycle is poorly managed.",
+    "trade_off": "Heat takes time to dissipate, potentially causing prolonged unwanted activations or tissue damage if the duty cycle is poorly managed.",
     "img_left": {
       "url": "",
       "title": "",
@@ -484,7 +482,7 @@
     "title": "Optogenetics",
     "title_in": "Optogenetics",
     "category": "Talk",
-    "direction": "Unidirectional / Direct / Cellular – injects signals into specific neuronal populations with binary On/Off precision",
+    "direction": "Direct – injects signals into specific neuronal populations with binary On/Off precision",
     "short_desc": "Optogenetics combines genetic engineering and optics to control cellular activity. A viral vector (generally AAV) inserts genes coding for light-sensitive proteins (opsins, such as Channelrhodopsin) into targeted neurons. Once expressed, these proteins act as ion channels that open or close in response to light pulses (lasers or LEDs), enabling instantaneous activation or inhibition of neurons.",
     "mechanism": "Photon → Opsin → ionic flux (Na⁺, Ca²⁺, Cl⁻) → action potential. Implanted either in the retina (intravitreal injection) or in the cortex/deep structures (optical fibers).",
     "use_cases": [
@@ -493,25 +491,25 @@
       "Neurology / Psychiatry: research on control of epileptic seizures, chronic pain and Parkinson's disease"
     ],
     "specs": {
-      "resolution_spatial": "< 1 µm (ultra-high, cellular) – can target a single neuron via two-photon holography",
-      "resolution_temporal": "< 1 ms (excellent) – can mimic natural neural codes at high frequency",
-      "channels": "1 (simple optical fiber) to > 10,000 neurons controlled independently via µLED arrays or spatial holography",
-      "bandwidth": "Stimulation frequencies up to 300 Hz (with fast variants like Chronos or f-ChR2 TC)",
-      "itr": "Potentially very high (> 1,000 bits/sec) – limited only by complexity of light projection system (DMD/Holography)",
-      "latency": "Sub-millisecond (intrinsic kinetics of type-1 opsins)",
+      "resolution_spatial": "< 1 µm (cellular)",
+      "resolution_temporal": "< 1 ms (lightspeed)",
+      "channels": "1 to > 10,000 neurons controlled independently via µLED arrays or spatial holography",
+      "bandwidth": "up to 300 Hz",
+      "itr": "Potentially very high; limited only by complexity of light projection system",
+      "latency": "< 1 ms",
       "snr": "Very high – activation is binary and only affects cells expressing the opsin, eliminating interference with non-targeted neighboring neurons",
-      "cost": "Research: laser systems $80,000–$150,000; AAV vectors ~$1.2 M for initial clinical preparation; Therapy (estimate): $300,000–$500,000 per eye (similar to gene therapies such as Luxturna)"
+      "cost": "Therapy (estimate): $300,000–$500,000 per eye (similar to gene therapies such as Luxturna)"
     },
     "regulatory": {
-      "class": "Class III (FDA/MDR) – combination of gene therapy (biological) and light stimulation device (hardware)",
-      "phase": "Phase I/II (human trials ongoing for vision: GenSight, Bionic Sight, Nanoscope Therapeutics). MCO-010 reported pivot Phase 2 results in 2024–2025",
-      "biocompatibility": "Risky. Requires permanent genetic modification; risks of immune inflammation against viral proteins and phototoxicity (tissue heating by light)."
+      "class": "Class III (FDA/MDR)",
+      "phase": "Phase I/II (human trials ongoing for vision: GenSight, Bionic Sight, Nanoscope Therapeutics)",
+      "biocompatibility": "Risky. Requires permanent genetic modification."
     },
-    "trade_off": "Optogenetics is the most precise communication tool ever created, capable of 'playing piano' with neurons. However, its hidden cost is genetic invasiveness: to use it, the patient must be partially transformed into a GMO, raising massive ethical and regulatory barriers compared to purely physical methods like TMS or ECoG.",
+    "trade_off": "Genetic invasiveness: to use it, the patient must be partially transformed into a GMO, raising massive ethical and regulatory barriers compared to purely physical methods like TMS or ECoG.",
     "img_left": {
-      "url": "",
-      "title": "",
-      "desc": ""
+      "url": "https://www.researchgate.net/publication/236690715/figure/fig5/AS:931893247766530@1599192072516/Schematic-diagram-of-optogenetic-techniques-Copyright-C-2010-Nature-Publishing-Group.jpg",
+      "title": "Schematic diagram of optogenetic techniques",
+      "desc": "Channelrhodopsins: Visual Regeneration & Neural Activation by a Light Switch., Natasha G. and Al., 2013"
     },
     "img_right": {
       "url": "",
@@ -524,7 +522,7 @@
     "title": "DREADDs",
     "title_in": "Chemogenetics – Designer Receptors Exclusively Activated by Designer Drugs",
     "category": "Talk",
-    "direction": "Unidirectional / Indirect / Modulation – modifies neural excitability over long periods via specific chemical activation",
+    "direction": "Indirect – modifies neural excitability over long periods via specific chemical activation",
     "short_desc": "Chemogenetics uses modified receptors (DREADDs) that no longer respond to natural neurotransmitters. They are activated only by a normally inert 'key' molecule, such as Clozapine N-oxide (CNO). Once the gene is inserted by a viral vector, injection of the molecule specifically activates or inhibits targeted neurons.",
     "mechanism": "Viral vector → DREADD receptor expression → Ligand (CNO) administration → G-protein signaling cascade → membrane modulation. 'Implantation' via viral vector (AAV) injection into brain parenchyma; no permanent hardware interface required.",
     "use_cases": [
@@ -533,21 +531,21 @@
       "Metabolic disorders: control of hunger and obesity circuits"
     ],
     "specs": {
-      "resolution_spatial": "Very high (cellular) – depends on specificity of the genetic promoter used",
+      "resolution_spatial": "Very high (cellular)",
       "resolution_temporal": "Very low (minutes to hours) – depends on pharmacokinetics of the activating molecule",
       "channels": "Global / thousands of cells – all cells expressing the receptor are modulated simultaneously by the molecule",
-      "bandwidth": "N/A – tonic modulation (state maintenance) rather than rapid signal transfer",
-      "itr": "N/A – no binary data transfer",
+      "bandwidth": "",
+      "itr": "",
       "latency": "15 to 60 minutes (time for molecule to cross the blood-brain barrier and reach receptors)",
-      "snr": "High – activating molecule designed to have no effect on other receptors in the body (biological inertness)",
-      "cost": "Viral vectors: $500–$2,500 per research injection; Ligand (CNO): ~$50/gram (very low)"
+      "snr": "High",
+      "cost": ""
     },
     "regulatory": {
-      "class": "N/A (Biological Product / Gene Therapy) – falls under drug/gene therapy regulations (FDA/EMA), not standard medical device classification",
-      "phase": "Pre-clinical – widely used in rodents and non-human primates; Phase I discussions for focal epilepsy ongoing in 2026",
-      "biocompatibility": "Moderate. Risks from viral vector use (immune response) and potential metabolic conversion of CNO to clozapine (an active molecule)."
+      "class": "falls under drug/gene therapy regulations (FDA/EMA)",
+      "phase": "Pre-clinical – widely used in rodents and non-human primates",
+      "biocompatibility": "Moderate. Risks from viral vector use (immune response)."
     },
-    "trade_off": "Chemogenetics enables 'DBS without wires or batteries' with cellular precision. However, its hidden cost is total lack of fine temporal control: once the drug is administered, the brain remains modulated for hours. Unlike optogenetics, the effect cannot be switched off instantaneously, limiting its use to chronic state changes.",
+    "trade_off": "Lack of fine temporal control: once the drug is administered, the brain remains modulated for hours. Unlike optogenetics, the effect cannot be switched off instantaneously, limiting its use to chronic state changes.",
     "img_left": {
       "url": "",
       "title": "",
@@ -681,42 +679,42 @@
   },
 
   "loop_4": {
-    "title": "Stentrodes",
-    "title_in": "Stentrodes (Stent-electrode arrays)",
+    "title": "Stentrode",
+    "title_in": "Stentrode (Stent-electrode array)",
     "category": "Loop",
-    "direction": "Bidirectional – designed initially for recording (Listen); capable of electrical stimulation (Talk) for sensory feedback or activity modulation",
-    "short_desc": "The Stentrode is an endovascular brain-machine interface: a self-expanding nitinol stent with fixed micro-electrodes. Unlike conventional interfaces, it requires no craniotomy – it is inserted via the jugular vein and routed through blood vessels to the superior sagittal sinus, adjacent to the motor cortex. Once deployed, it integrates into the vessel wall (endothelialization), recording neural signals through the vascular wall without direct parenchyma contact.",
-    "mechanism": "Endovascular ECoG signal capture → transmission via intravascular cable to implanted telemetry unit (ITU) in the chest → wireless transmission to an external receiver.",
+    "direction": "Bidirectional : designed initially for recording; capable of electrical stimulation for sensory feedback or activity modulation",
+    "short_desc": "The Stentrode is an endovascular brain-machine interface: a self-expanding nitinol stent with fixed micro-electrodes. Unlike conventional interfaces, it requires no craniotomy, it is inserted via the jugular vein and routed through blood vessels to the superior sagittal sinus, adjacent to the motor cortex. Once deployed, it integrates into the vessel wall, recording neural signals through the vascular wall without direct parenchyma contact.",
+    "mechanism": "Endovascular ECoG signal capture → transmission via intravascular cable to implanted telemetry unit in the chest → wireless transmission to an external receiver.",
     "use_cases": [
       "Severe paralysis (ALS, stroke, spinal cord injuries): cursor control, mental typing (email, SMS) and internet navigation",
       "Neuroprosthetics: exoskeleton or robotic prosthetic control",
       "Future potential: epilepsy treatment (seizure detection and suppression) and Parkinson's disease"
     ],
     "specs": {
-      "resolution_spatial": "~1–2 mm (moderate – less precise than intracortical electrodes as signal is filtered through vessel wall, but better than EEG)",
-      "resolution_temporal": "< 1 ms (excellent – captures Gamma band frequencies > 70 Hz)",
+      "resolution_spatial": "moderate; less precise than intracortical electrodes as signal is filtered through vessel wall, but better than EEG",
+      "resolution_temporal": "excellent; captures Gamma band frequencies",
       "channels": "16 recording channels on current models",
-      "bandwidth": "~100–500 kbps (sufficient for cursor control and digital clicks)",
-      "itr": "10 to 20 bits/min (~14–20 characters per minute in trained patients)",
-      "latency": "< 50 ms (signal acquisition); user-perceived latency depends on decoder software processing",
-      "snr": "High (SNR ~4–8) – protected from external interference by skull, though slightly attenuated by electrode-neuron distance",
-      "cost": "> $150,000 (estimate for complete system including minimally invasive surgery and telemetry unit)"
+      "bandwidth": "",
+      "itr": "",
+      "latency": "",
+      "snr": "",
+      "cost": ""
     },
     "regulatory": {
-      "class": "Class III (FDA/PMA pending) – currently under Investigational Device Exemption (IDE)",
-      "phase": "Phase I/II (Early Feasibility Study) – COMMAND (USA) and SWITCH (Australia) trials ongoing; estimated end of main feasibility study: September 2026",
-      "biocompatibility": "Excellent. Nitinol and Platinum-Iridium. Endothelialization (vessel cell coverage) reduces thrombosis risk and mechanically stabilizes the implant."
+      "class": "Class III (FDA/PMA pending)",
+      "phase": "Phase I/II (Early Feasibility Study)",
+      "biocompatibility": ""
     },
-    "trade_off": "Stentrode is the ultimate compromise between invasiveness and performance. It avoids open-brain surgery (craniotomy), drastically reducing infection and rejection risks. However, its hidden cost is spatial limitation: confined to blood vessels, it cannot be placed anywhere in the brain, limiting use to areas 'accessible' by the vascular network (primarily motor cortex).",
+    "trade_off": "Spatial limitation: confined to blood vessels, it cannot be placed anywhere in the brain, limiting use to areas accessible by the vascular network (primarily motor cortex).",
     "img_left": {
-      "url": "",
-      "title": "",
-      "desc": ""
+      "url": "https://www.researchgate.net/publication/362301110/figure/fig1/AS:1182656112930829@1658978598719/Stentrode-based-BCI-for-multi-click-computer-control-used-by-an-individual-with-ALS-The.jpg",
+      "title": "Stentrode-based BCI for multi-click computer control",
+      "desc": "How does artificial intelligence contribute to iEEG research?, Berezutskaya J and Al., 2022"
     },
     "img_right": {
-      "url": "",
-      "title": "",
-      "desc": ""
+      "url": "https://synchron.com/uploads/images/SYN003-TedTalk-4K-4.mp4",
+      "title": "Animation of the stentrode placement",
+      "desc": "synchron.com"
     }
   }
 }
