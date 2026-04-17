@@ -106,25 +106,40 @@ function openModal(key) {
 
     infoWindow.scrollTop = 0;
     
-    // Construction d'une interface riche
+    const renderMedia = (media) => {
+        if (!media || !media.url) return `<img src="https://placehold.co/404" alt="Not found">`;
+        
+        const isVideo = media.url.toLowerCase().endsWith('.mp4');
+        
+        if (isVideo) {
+            return `
+                <video autoplay loop muted playsinline>
+                    <source src="${media.url}" type="video/mp4">
+                </video>`;
+        } else {
+            return `<img src="${media.url}" alt="${media.title || 'Illustration'}">`;
+        }
+    };
+
+    // Dans ta fonction openModal, remplace la section illustration-container par :
     let html = `
         <div class="modal-header">
             <div class="badge">${data.category || 'Interface'}</div>
-            <h1>${data.title_in}</h1>
+            <h1>${data.title_in || data.title}</h1>
             <p class="subtitle">${data.direction || ''}</p>
 
             <div class="illustration-container">
                 <div class="illus-card">
-                    <img src="${data.img_left?.url || 'https://placehold.co/404'}" alt="Illustration gauche">
+                    ${renderMedia(data.img_left)}
                     <div class="illus-info">
-                        <h5>${data.img_left?.title || 'Concept'}</h5>
+                        <h5>${data.img_left?.title || 'No Image'}</h5>
                         <p>${data.img_left?.desc || ''}</p>
                     </div>
                 </div>
                 <div class="illus-card">
-                    <img src="${data.img_right?.url || 'https://placehold.co/404'}" alt="Illustration droite">
+                    ${renderMedia(data.img_right)}
                     <div class="illus-info">
-                        <h5>${data.img_right?.title || 'Application'}</h5>
+                        <h5>${data.img_right?.title || 'No Image'}</h5>
                         <p>${data.img_right?.desc || ''}</p>
                     </div>
                 </div>
