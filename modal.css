@@ -2,8 +2,8 @@
     position: fixed;
     top: 50%;
     left: 50%;
-    width: 80vw;
-    max-width: 1000px;
+    width: 100vw;
+    max-width: 1200px;
     height: 85vh;
     background: rgba(10, 15, 30, 0.98);
     color: #e2e8f0;
@@ -97,13 +97,30 @@ h3 { border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 8px; color:
 
 .spec-item {
     display: flex;
-    justify-content: space-between;
+    flex-direction: row; /* Aligné par défaut */
+    justify-content: flex-start; /* Aligné au début pour éviter le gap forcé */
+    align-items: baseline;
+    gap: 15px; /* Espace minimum entre le label et la donnée */
     font-size: 0.85rem;
-    margin-bottom: 8px;
-    border-bottom: 1px solid rgba(255,255,255,0.03);
+    margin-bottom: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    padding-bottom: 4px;
 }
 
-.spec-item span { opacity: 0.6; }
+.spec-item span {
+    opacity: 0.6;
+    flex: 0 0 120px; /* Largeur fixe pour le label : empêche le chevauchement */
+    font-size: 0.75rem;
+    text-transform: uppercase;
+}
+
+.spec-item strong {
+    flex: 1; /* Prend tout l'espace restant */
+    text-align: right;
+    color: #fff;
+    word-break: break-word; /* Force la coupure de mot si vraiment trop long */
+    line-height: 1.2;
+}
 
 .warning-box {
     background: rgba(245, 158, 11, 0.1);
