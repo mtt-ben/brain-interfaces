@@ -121,7 +121,6 @@ function openModal(key) {
         }
     };
 
-    // Dans ta fonction openModal, remplace la section illustration-container par :
     let html = `
         <div class="modal-header">
             <div class="badge">${data.category || 'Interface'}</div>
@@ -148,8 +147,12 @@ function openModal(key) {
         
         <div class="modal-grid">
             <div class="main-info">
+                <section class="short-desc-section">
+                    <p class="emphasized-text">${data.short_desc || ''}</p>
+                </section>
+
                 <section>
-                    <h3><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg> How it works</h3>
+                    <h3><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg> Mechanism</h3>
                     <p>${data.mechanism || data.content}</p>
                 </section>
                 
@@ -172,6 +175,7 @@ function openModal(key) {
                     <div class="spec-item"><span>Temporal Res.</span> <strong>${data.specs?.resolution_temporal || '-'}</strong></div>
                     <div class="spec-item"><span>Channels</span> <strong>${data.specs?.channels || '-'}</strong></div>
                     <div class="spec-item"><span>Latency</span> <strong>${data.specs?.latency || '-'}</strong></div>
+                    <div class="spec-item"><span>Cost</span> <strong>${data.specs?.cost || '-'}</strong></div>
                 </div>
 
                 <div class="spec-card">

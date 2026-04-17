@@ -195,3 +195,22 @@ h3 { border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 8px; color:
     opacity: 0.7;
     line-height: 1.3;
 }
+
+.short-desc-section {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed rgba(56, 189, 248, 0.2);
+}
+
+.emphasized-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #f8fafc;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+/* Ajustement pour le coût si le texte est long */
+.spec-item strong {
+    font-size: 0.8rem; /* Légèrement plus petit pour les prix détaillés */
+}
